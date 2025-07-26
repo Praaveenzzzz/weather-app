@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Praaveen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+            <p>Get real-time weather information for any city</p>
+        </div>
+
+        <div class="search-container">
+            <form id="weatherForm">
+                <div class="input-group">
+                    <input type="text" id="cityInput" placeholder="Enter city name..." required>
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <div class="weather-container" id="weatherContainer">
+            <div class="current-weather">
+                <div class="location">
+                    <h2 id="cityName">City Name</h2>
+                    <p id="date">Date</p>
+                </div>
+                
+                <div class="temperature">
+                    <div class="temp-main">
+                        <span id="temperature">--</span>
+                        <span class="temp-unit">°C</span>
+                    </div>
+                    <div class="weather-icon">
+                        <i id="weatherIcon" class="fas fa-sun"></i>
+                    </div>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-temperature-high"></i>
+                        <div>
+                            <span class="label">Feels Like</span>
+                            <span id="feelsLike" class="value">--°C</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <span class="label">Humidity</span>
+                            <span id="humidity" class="value">--%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <span class="label">Wind Speed</span>
+                            <span id="windSpeed" class="value">-- km/h</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <i class="fas fa-compress"></i>
+                        <div>
+                            <span class="label">Pressure</span>
+                            <span id="pressure" class="value">-- hPa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-container" id="forecastContainer">
+                    <!-- Forecast items will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <div class="error-container" id="errorContainer">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>City Not Found</h3>
+            <p>Please check the spelling and try again.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by Praaveen | Weather App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
